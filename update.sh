@@ -904,7 +904,7 @@ main() {
     fix_compile_coremark
     update_dnsmasq_conf
     add_backup_info_to_sysupgrade
-    update_mosdns_deconfig
+    #update_mosdns_deconfig
     fix_quickstart
     update_oaf_deconfig
     add_timecontrol
@@ -912,7 +912,7 @@ main() {
     add_quickfile
     update_lucky
     fix_rust_compile_error
-    update_smartdns
+    #update_smartdns
     update_diskman
     set_nginx_default_config
     update_uwsgi_limit_as
@@ -920,7 +920,7 @@ main() {
     install_feeds
     support_fw4_adg
     update_script_priority
-    fix_easytier
+    #fix_easytier
     update_geoip
     update_package "runc" "releases" "v1.2.6"
     update_package "containerd" "releases" "v1.7.27"
