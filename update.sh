@@ -302,8 +302,38 @@ apply_hash_fixes() {
     fix_hash_value \
         "$BUILD_DIR/package/feeds/packages/smartdns/Makefile" \
         "150019a03f1ec2e4b5849740a72badf5ea094d5754bd59dd30119523a3ce9398" \
-        "abcb3d3bfa99297dfb92b8fb4f1f78d0948a01281fdfc76c9c460a2c3d5c7f79" \
+        "70641636b01cd0305b9076b406f8d751b71d7a3e56b5c2039aac29a4f0ff93d7" \
         "smartdns"
+
+    fix_hash_value \
+        "$BUILD_DIR/package/feeds/nss_packages/nss-firmware/Makefile" \
+        "3ec87f221e8905d4b6b8b3d207b7f7c4666c3bc8db7c1f06d4ae2e78f863b8f4" \
+        "37a50c96e0dddb28db2d12b48e82af1afcc339b17019459771d398cced51eeef" \
+        "nss-firmware"
+
+    fix_hash_value \
+        "$BUILD_DIR/package/feeds/nss_packages/qca-nss-clients/Makefile" \
+        "5346ff2a8a89f6d671543f22e13594343b27bf81e709f07af46ade03a7614900" \
+        "56cd0b3daca414bd215c3c804d5ca9bdbdaca128c05a9452c7b1eb592b17061c" \
+        "qca-nss-clients"
+
+    fix_hash_value \
+        "$BUILD_DIR/package/feeds/nss_packages/qca-nss-drv/Makefile" \
+        "f13681c4aadde3aa713e4ae1426d22f19a387a729521aa1e19ba9d690c17b8e3" \
+        "24ffda06f6f4fe52f6d47a32d43d58e111a35ae65a0893664c931cb7bb7eca12" \
+        "qca-nss-drv"
+
+    fix_hash_value \
+        "$BUILD_DIR/package/feeds/nss_packages/qca-nss-ecm/Makefile" \
+        "a6b508a41ae79cb579e83ea1d1f5a158c7758ab45f1d26a698677a5ec61ca03d" \
+        "9d77fe8b74dd3b99a972b7eaa1dcf66142d73340dc4a0b667e75c17e48bd7c19" \
+        "qca-nss-ecm"
+
+    fix_hash_value \
+        "$BUILD_DIR/package/firmware/ath11k-firmware/Makefile" \
+        "73d35ea14b447f19fddf485e009fe68b20080d56ae7f3a51f47a1a1f7cbf78cb" \
+        "d25d1e1fdcdfb7d57cf0b79e216373277da7da4c96886b14f67a55f5c5cadf8f" \
+        "ath11k-firmware"
 }
 
 update_ath11k_fw() {
@@ -928,7 +958,6 @@ main() {
     update_uwsgi_limit_as
     update_argon
     install_feeds
-    apply_hash_fixes # 调用哈希修正函数
     support_fw4_adg
     update_script_priority
     fix_easytier
@@ -937,6 +966,7 @@ main() {
     update_package "containerd" "releases" "v1.7.27"
     update_package "docker" "tags" "v28.2.2"
     update_package "dockerd" "releases" "v28.2.2"
+    apply_hash_fixes # 调用哈希修正函数
 }
 
 main "$@"
