@@ -3,7 +3,8 @@
 set -e
 set -o errexit
 set -o errtrace
-
+#sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+#sed -i "s/hostname='.*'/hostname='Xin'/g" package/base-files/files/bin/config_generate
 # 定义错误处理函数
 error_handler() {
     echo "Error occurred in script at line: ${BASH_LINENO[0]}, command: '${BASH_COMMAND}'"
@@ -83,7 +84,8 @@ update_feeds() {
     ./scripts/feeds clean
     ./scripts/feeds update -a
 }
-
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+sed -i "s/hostname='.*'/hostname='Xin'/g" package/base-files/files/bin/config_generate
 remove_unwanted_packages() {
     local luci_packages=(
         "luci-app-passwall" "luci-app-ddns-go" "luci-app-rclone" "luci-app-ssr-plus"
