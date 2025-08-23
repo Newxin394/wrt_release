@@ -776,7 +776,9 @@ update_diskman() {
         sed -i '/ntfs-3g-utils /d' "$path/Makefile"
     fi
 }
-
+# add feed
+echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
+# update & install feeds
 add_quickfile() {
     local repo_url="https://github.com/sbwml/luci-app-quickfile.git"
     local target_dir="$BUILD_DIR/package/emortal/quickfile"
