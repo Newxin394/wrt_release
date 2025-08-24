@@ -58,7 +58,8 @@ reset_feeds_conf() {
         git checkout $COMMIT_HASH
     fi
 }
-
+echo "src-git momo https://github.com/nikkinikki-org/OpenWrt-momo.git;main" >> "feeds.conf.default"
+# update & install feeds
 update_feeds() {
     # 删除注释行
     sed -i '/^#/d' "$BUILD_DIR/$FEEDS_CONF"
